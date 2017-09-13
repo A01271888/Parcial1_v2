@@ -11,19 +11,19 @@ app.use(urlencodedParser);
 
 const eventosController = require('./controllers/eventos.js');
 const actividadesController = require('./controllers/actividades');
-
-  app.get('/', function() {
+// const oauth = require('./controller/oauth');
+// curl -i -X "POST" "http://localhost:4200" -d "email=correo@gmail.com&password=123"
+  
+app.get('/', function() {
       console.log("Entré");
   });
 
-  app.post('/oauth/token', function(res, rep){
+// app.post('/oauth/token', oauth.validar);
 
-   });
+app.get('/eventos', eventosController.inicio);
 
-  app.get('/eventos', eventosController.inicio);
+app.get('/actividades', actividadesController.inicio)
 
-  app.get('/actividades', actividadesController.inicio)
-
-  app.delete('/eventos/:id', eventosController.destroy);
+app.delete('/eventos/:id', eventosController.destroy);
 
 exports.app = app;
