@@ -1,5 +1,5 @@
 
-var actividades = [
+const actividades = [
     {
         id: 1,
         nombre: "Recepción",
@@ -19,3 +19,7 @@ var actividades = [
         fin: "2017-09-18 T19:00"
     },
 ]
+
+exports.showAll = function(){
+    return actividades;
+};

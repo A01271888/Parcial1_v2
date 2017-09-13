@@ -1,11 +1,11 @@
-const exphbs = require('express-handlebars');
+const exphbs = require ('express-handlebars');
 
-const PORT = 8888;
+const port = 8080;
 
-const router = require('./route');
+const router = require('./router');
 const app = router.app;
 
 app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
-app.listen(PORT);
+app.listen(port);
